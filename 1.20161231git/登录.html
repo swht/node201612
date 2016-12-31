@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <p>用户名:</p><input id="username" type="text" placeholder="请输入用户名" onfocus="Focus('name');" onblur="Blur('name');"/>
+    <p>密码:</p><input id="passwd" type="password" placeholder="请输入密码" onfocus="Focus('pass');" onblur="Blur('pass');"/>
+
+    <script src="jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        function Focus(key) {
+            if (key == "name") {
+                var default_value = $("#username");
+                if (default_value.attr("placeholder") == "请输入用户名") {
+                    default_value.attr("placeholder","");
+                }
+            }else if (key == "pass"){
+                var default_value = $("#passwd");
+                if (default_value.attr("placeholder") == "请输入密码") {
+                    default_value.attr("placeholder","");
+                }
+            }
+        }
+        function Blur(key) {
+            if (key == 'name') {
+                var input_value = $("#username");
+                if (!input_value.attr("placeholder").trim()) {
+                    input_value.attr("placeholder","请输入用户名");
+                }
+            }else if (key == 'pass') {
+                var input_value = $("#passwd");
+                if (!input_value.attr("placeholder").trim()) {
+                    input_value.attr("placeholder","请输入密码");
+                }
+            }
+        }
+    </script>
+    <script src="./push.js"></script>
+
+</body>
+</html>
